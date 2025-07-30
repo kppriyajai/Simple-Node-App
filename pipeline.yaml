@@ -1,7 +1,5 @@
 pipeline:
   name: "Pipeline as Code - Tutorial "
-  identifier: Pipeline_as_Code_Tutorial
-  projectIdentifier: GitExperience_Demo
   orgIdentifier: default
   tags: {}
   properties:
