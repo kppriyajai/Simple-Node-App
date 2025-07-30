@@ -1,27 +1,35 @@
+
 pipeline:
-  name: "Pipeline as Code - Tutorial "
+  name: HelloWorldPipeline
+  identifier: HelloWorldPipeline
+  projectIdentifier: default_project
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: kppriyajai
+        repoName: Simple-Node-App
+        build:
+          type: branch
+          spec:
+            branch: main
   stages:
     - stage:
-        name: CI
-        identifier: CI
-        description: ""
+        name: HelloWorldStage
+        identifier: HelloWorldStage
         type: CI
         spec:
           cloneCodebase: true
-          platform:
-            os: Linux
-            arch: Amd64
-          runtime:
+          infrastructure:
             type: Cloud
             spec: {}
           execution:
             steps:
               - step:
                   type: Run
-                  name: Run
-                  identifier: Run
+                  name: Print Hello World
+                  identifier: Print_Hello_World
                   spec:
                     shell: Sh
-                    command: |-
-                      npm install
-                      npm test
+                    command: echo "Hello, World!"
